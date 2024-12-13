@@ -1,11 +1,8 @@
 import torch
 from torch.utils import data
-import numpy as np
 import utils
-import pickle
-import collections
 
- 
+
 # empirical distribution/counts s/r/o in one day, predict r
 class DistData(data.Dataset):
       def __init__(self, path, dataset, num_nodes, num_rels, set_name):

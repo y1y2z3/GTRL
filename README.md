@@ -1,6 +1,5 @@
 # GTRL
 
-
 This is the source code for paper [GTRL: An Entity Group-Aware Temporal Knowledge Graph Representation Learning Method]
 
 

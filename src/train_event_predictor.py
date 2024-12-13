@@ -5,18 +5,12 @@ warnings.warn = warn
 
 import argparse
 import numpy as np
-import time
-import utils
-import os
-from sklearn.utils import shuffle
 from models import *
 from data import *
 import pickle
 from tqdm import tqdm
 import torch
 from torch.utils.data import DataLoader
-
-import nni
 
 #true_params = nni.get_next_parameter()
 parser = argparse.ArgumentParser(description='')
@@ -189,7 +183,7 @@ while iterations < args.runs:
             total_loss += loss.item()
     
         print('{} results'.format(set_name)) 
-        hloss, recall, f1, f2 = utils.print_eval_metrics(true_rank_l,prob_rank_l)
+        hloss, recall, f1, f2 = utils.print_eval_metrics(true_rank_l, prob_rank_l)
         hits, mrr, mr = utils.print_hit_eval_metrics(total_ranks)
         reduced_loss = total_loss / (dataset_loader.len / 1.0)
         print("{} Loss: {:.6f}".format(set_name, reduced_loss))
