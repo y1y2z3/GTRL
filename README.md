@@ -22,10 +22,11 @@ ICEWS14
 
 - dgl 0.5.0
 
-- Sklearn 0.23.2
+- scikit-learn 0.23.2
 
 - Pandas 1.1.1
 
+pip install dgl==0.5.0 scikit-learn==0.23.2 Pandas==1.1.1
 
 ## Training and testing
 
@@ -33,10 +34,9 @@ Please run following commands for training and testing. We take the dataset `exa
 
 **Event prediction**
 
-python:
+train: `python train_event_predictor.py --dp ../data/ --gpu 1  -d example --seq-len 7`
 
-python train_event_predictor.py --runs 5 --dp ../data/ --gpu 1  -d example --seq-len 7
-
+test: `python train_event_predictor.py --dp ../data/ --gpu 1  -d example --seq-len 7 --test --tmn 'test model name'`
 
 ## Acknowledgements
 

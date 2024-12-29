@@ -7,6 +7,7 @@ import dgl.function as fn
 import math
 # Graph Propagation models
 
+
 class NodeApplyModule(nn.Module):
     def __init__(self, in_feats, out_feats, activation):
         super(NodeApplyModule, self).__init__()
@@ -17,7 +18,8 @@ class NodeApplyModule(nn.Module):
         h = self.linear(node.data['h'])
         if self.activation:
             h = self.activation(h)
-        return {'h' : h}
+        return {'h': h}
+
 
 class GCNLayer(nn.Module):
     def __init__(self, in_feats, out_feats, activation, dropout=0.0):
